@@ -1,0 +1,29 @@
+.Women {
+    margin: 3%;
+
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 30%;
+    height: 300px;
+    background-color: #EFF5F5;
+    margin: 3%;
+}
+
+*{box-sizing: border-box;}
+
+@media (max-width: 800px) {
+    .boxes {
+        flex-direction: column;
+    }
+}

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Footer from './components/layouts/Footer/Footer'
+import Men from "./components/pages/Men/Men";
+import Women from './components/pages/Women/Women';
+import Kids from './components/pages/Kids/Kids';
+import Navbar from './components/layouts/Navbar/Navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <Router>
+        <div className='App'>
+         <Navbar />
+            <main>
+              <Routes>
+                <Route path='/' element={<Women />} />
+                <Route path='/Men' element={<Men />} />
+                <Route path='/Kids' element={<Kids />} />
+              </Routes>
+            </main>
+          <Footer />
+         </div>
+        </Router>
+    )
 }
 
-export default App;
+export default App
