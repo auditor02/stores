@@ -1,29 +1,19 @@
-.Kids {
-    margin: 3%;
-
-}
-
-h1 {
-    margin-left: 10px;
-}
 
 .boxes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 1%;
+    padding-left: 1%;
 }
 
 .box {
-    width: 30%;
-    height: 300px;
-    background-color: #EFF5F5;
-    margin: 3%;
+    width: 250px;
+    height: 250px;
 }
 
-*{box-sizing: border-box;}
-
-@media (max-width: 800px) {
-    .boxes {
-        flex-direction: column;
-    }
+.box .img {
+   height: 150px;
+   width: 150px;
+   margin-left: 20%;
 }

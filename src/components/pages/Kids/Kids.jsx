@@ -1,31 +1,44 @@
 import './Kids.css'
+import {useState, useEffect} from "react"
 
 function Kids() {
-  return (
-    <div className="Kids">
-      <h1>Category Name</h1>
-        <div className='boxes'>
-              <div className="box">
-                o
-              </div>
-              <div className="box">
-                o
-                </div>
-                <div className="box">
-                o
-                </div>
-                <div className="box">
-                0
-                </div>
-                <div className="box">
-                0
-                </div>
-                <div className="box">
-                0
-                </div>
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    items()
+  }, [])
+
+  // Fetched items
+  const items = async () => {
+    const res = await fetch(`https://fakestoreapi.com/products/20`)
+    const data = await res.json()
+
+    setProducts(data)
+  } 
+  const Display = () => {
+    return (   
+        <div key={products.id} className="box">
+        <img src={`${products.image }`} alt="" className="img" />
+        <p>{products.title}</p>
+        <p>${products.price}</p>
         </div>
+    )
+  }
   
-    </div>
+  return (
+      <div>
+        <h1>Category</h1>
+        <div className="boxes"> 
+          <Display />
+          <Display />
+          <Display />
+          <Display />
+          <Display />
+          <Display />
+          <Display />
+          <Display />   
+        </div>
+      </div>
   )
 }
 

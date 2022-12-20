@@ -2,6 +2,7 @@ import './Navbar.css';
 import { FaDollarSign, FaShoppingCart, icons } from "react-icons/fa";
 import {Link} from "react-router-dom";
 
+
 function Navbar() {
   
   return (
@@ -17,7 +18,9 @@ function Navbar() {
        <FaDollarSign />
       </div>
       <div className="link">
-       <FaShoppingCart />
+        <Link to='/Checkout' className='link'>
+          <FaShoppingCart />
+        </Link>
       </div>
     </nav>
   </div>
